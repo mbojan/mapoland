@@ -4,8 +4,7 @@
 \docType{package}
 \title{Maps of Poland}
 \description{
-This package contains data and tools for drawing an maps of
-Poland.
+This package contains data and tools for drawing maps of Poland.
 }
 \details{
 This package enables drawing data on administrative maps of Poland. It includes
@@ -25,7 +24,7 @@ Michal Bojanowski and Tomasz W. Jerzynski
 Maintainer: Michal Bojanowski \email{michal2992@gmail.com}
 }
 \seealso{
-On CRAN you can also find other packages for drawing maps, e.g. \pkg{maps}.
+\pkg{mapoland} on WWW: \url{http://mapoland.r-forge.r-project.org}
 }
 \examples{
 # TODO
