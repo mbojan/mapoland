@@ -1,0 +1,44 @@
+# package name
+pkgName <- "mapoland"
+
+# authors and maintainer
+mb <- person( "Michal", "Bojanowski", email="mbojan@ifispan.waw.pl")
+authors <- personList( mb,
+    person( "Tomasz", "Jerzynski", "W.", email="twj@uw.edu.pl") )
+
+
+
+
+info <- help(package=as.character(pkgName))$info[[1]] # info on package
+
+# extract version number
+x <- unlist( strsplit(info[2], " ") )
+ver <- x[length(x)]
+
+# extract date
+x <- unlist(strsplit(info[3], " " ))
+d <- x[length(x)]
+yr <- substr(d, 1, 4)
+
+citHeader(paste("To cite package", sQuote(pkgName), "in publications use:"))
+
+citEntry(entry="Manual",
+	 title = paste("mapoland: Maps of Poland for data visualization and graphics"),
+         author = authors,
+         year         = yr,
+         url          = "http://www.bojan.prv.pl",
+	 note= paste("R package version", ver),
+
+	 textVersion=paste("Bojanowski, Michal and Tomasz W. Jerzynski (", yr, "). ",
+	    "mapoland: Maps of Poland for data visualization and graphics. ",
+	    "R package version ", ver, ". ",
+	    "URL http://www.bojan.prv.pl.",
+	    sep="")
+         )
+
+citFooter("I have invested some time and effort in creating this package,",          
+    "please cite it when using it for data analysis or other tasks.")
+
+rm(pkgName,mb,authors)
+rm(x, ver, yr, info)
+

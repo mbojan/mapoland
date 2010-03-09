@@ -1,0 +1,12 @@
+Package: mapoland
+Version: 0.2-0
+Date: 2010-03-05
+Title: Maps of Poland for data visualization and graphics
+Author: Michal Bojanowski, Tomasz W. Jerzynski
+Maintainer: Michal Bojanowski <michal2992@gmail.com>
+Depends: R (>= 2.0.0), methods, maptools
+Description: Tools and data for drawing administrative maps of Poland. The data
+	contain information on voivodships, counties and municipalities
+License: GPL 2
+LazyLoad: yes
+LazyData: yes
