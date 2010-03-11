@@ -1,7 +1,6 @@
 Package: mapoland
 Version: 0.2-0
 Date: 2010-03-05
-Revision: $Rev$
 Title: Maps of Poland for data visualization and graphics
 Author: Michal Bojanowski, Tomasz W. Jerzynski
 Maintainer: Michal Bojanowski <michal2992@gmail.com>
