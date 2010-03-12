@@ -2,12 +2,6 @@
 
 % \VignetteIndexEntry{mapoland}
 
-\usepackage{svn-multi}
-\svnidlong
-{$HeadURL$}
-{$LastChangedDate$}
-{$LastChangedRevision$}
-{$LastChangedBy$}
 
 \usepackage{a4wide,url}
 \usepackage[noae]{Sweave}
@@ -128,8 +122,14 @@ print(voivPlot(p, main="Perimeter"))
 
 
 
+\vfill
 
 
+\begin{verbatim}
+$LastChangedDate$
+$LastChangedRevision$
+$LastChangedBy$
+\end{verbatim}
 
 
 
