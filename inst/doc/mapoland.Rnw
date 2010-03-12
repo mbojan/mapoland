@@ -1,0 +1,66 @@
+\documentclass[a4paper]{article}
+
+% \VignetteIndexEntry{mapoland}
+
+\usepackage{svn-multi}
+\svnidlong
+{$HeadURL$}
+{$LastChangedDate$}
+{$LastChangedRevision$}
+{$LastChangedBy$}
+
+\usepackage{a4wide,url}
+\usepackage{svn-mult}
+\usepackage[noae]{Sweave}
+\usepackage[small,format=hang,textfont=small,labelfont={small,it}]{caption}
+
+\urlstyle{sf}
+\SweaveOpts{echo=TRUE,width=10,height=5}
+
+\title{Ussing package \pkg{mapoland}}
+
+\author{Micha\l\ Bojanowski\\
+\email{michal2992@gmail.com}}
+
+\date{\svnyear--\svnmonth--\svnday}
+
+
+\newcommand{\pkg}[1]{\textsf{#1}}
+\newcommand{\email}[1]{\url{#1}}
+
+
+
+
+\begin{document}
+
+
+<<preamble,results=hide>>=
+# Sweave hooks
+options(SweaveHooks = list(fig=function() par(mgp=c(3, 1, 0), mar=c(4, 4, 2, 2))))
+library(mapoland)
+@
+
+
+\maketitle
+
+
+This document shows some examples how to use package \pkg{mapoland}.
+
+
+
+\section{Plotting voivodships}
+
+\begin{figure}
+<<voivfig,fig=TRUE>>=
+a <- structure( voivData$area, names=rownames(voivData))
+p <- structure( voivData$perimeter, names=rownames(voivData))
+layout(matrix(1:2, 1, 2))
+print(voivPlot(a, main="Area"))
+print(voivPlot(p, main="Perimeter"))
+@
+\caption{Area and perimeter of voivodships.}
+\end{figure}
+
+
+
+\end{document}
