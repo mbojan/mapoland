@@ -10,23 +10,24 @@
 {$LastChangedBy$}
 
 \usepackage{a4wide,url}
-\usepackage{svn-mult}
 \usepackage[noae]{Sweave}
-\usepackage[small,format=hang,textfont=small,labelfont={small,it}]{caption}
 
 \urlstyle{sf}
-\SweaveOpts{echo=TRUE,width=10,height=5}
+\SweaveOpts{echo=TRUE,width=5,height=5,keep.source=TRUE}
+\setkeys{Gin}{width=.9\textwidth}
 
-\title{Ussing package \pkg{mapoland}}
+\title{Using package \pkg{mapoland}}
 
 \author{Micha\l\ Bojanowski\\
 \email{michal2992@gmail.com}}
 
-\date{\svnyear--\svnmonth--\svnday}
+\date{\svnyear--\svnmonth--\svnday\\
+Very drafty draft}
 
 
 \newcommand{\pkg}[1]{\textsf{#1}}
 \newcommand{\email}[1]{\url{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
 
 
 
@@ -34,32 +35,116 @@
 \begin{document}
 
 
-<<preamble,results=hide>>=
+<<preamble,results=hide,echo=FALSE>>=
 # Sweave hooks
 options(SweaveHooks = list(fig=function() par(mgp=c(3, 1, 0), mar=c(4, 4, 2, 2))))
+@
+
+<<packages,results=hide,echo=FALSE>>=
 library(mapoland)
+library(bojan)
 @
 
 
 \maketitle
 
+\begin{abstract}
+    This document shows some examples how to use package \pkg{mapoland}.
+\end{abstract}
 
-This document shows some examples how to use package \pkg{mapoland}.
+\tableofcontents
+
+\newpage
 
 
 
-\section{Plotting voivodships}
 
-\begin{figure}
-<<voivfig,fig=TRUE>>=
+\section{Methods in package \pkg{mapoland}}
+
+You can use the function \code{voivPlot} as a quick way of picturing vectors of
+numerical data on the map of voivodships. 
+
+Let's take the data from the built-in data frame with some voivodships meta
+data. Safe, warningless strategy is to always set the names on the data vector
+so that the values are matched properly with the polygons.
+
+<<voivData>>=
 a <- structure( voivData$area, names=rownames(voivData))
+a
 p <- structure( voivData$perimeter, names=rownames(voivData))
-layout(matrix(1:2, 1, 2))
+p
+@
+
+The function \code{voivPlot} is a wrapper for \code{spplot} from package
+\pkg{sp}, which in turn relies on grapics system from \pkg{grid} package.  Now
+we can produce the maps with the following code:\footnote{Calling \code{print}
+is not neccessary while in interactive session.}
+
+<<voivarea,echo=FALSE,results=hide,eval=FALSE>>=
 print(voivPlot(a, main="Area"))
+@
+<<voivperimeter,echo=FALSE,results=hide,eval=FALSE>>=
 print(voivPlot(p, main="Perimeter"))
 @
+
+<<voivplotcode,eval=FALSE>>=
+<<voivarea>>
+<<voivperimeter>>
+@
+
+\begin{figure}
+\setkeys{Gin}{width=.4\textwidth}
+\centerline{
+<<voivplot1,fig=TRUE,echo=FALSE,results=hide>>=
+<<voivarea>>
+@
+<<voivplot2,fig=TRUE,echo=FALSE,results=hide>>=
+<<voivperimeter>>
+@
+}
+\setkeys{Gin}{width=.9\textwidth}
 \caption{Area and perimeter of voivodships.}
+\label{f:voivplot}
 \end{figure}
+
+
+
+
+
+
+\section{Using \code{plot} methods of package \pkg{sp}}
+
+It is possible to use plotting methods from package \pkg{sp} manually.
+
+
+<<fig=TRUE>>=
+s <- getShape("voiv")
+k <- coordinates(s)
+# colors
+library(bojan)
+kol <- gray(rescale(a, .2, .9))
+plot(s, col=kol)
+@
+
+
+
+
+\section{References}
+
+
+\begin{list}{}{}
+    \item Bojanowski, Michal (2009). \pkg{bojan}: Michal Bojanowski's R
+    package. R package version 0.3-0. URL \url{http://www.bojanorama.pl}
+
+    \item Bojanowski, Michal and Tomasz W. Jerzynski (2010). \pkg{mapoland}:
+    Maps of Poland for data visualization and graphics. R package version
+    0.2-0.  URL \url{http://mapoland.r-forge.r-project.org}
+\end{list}
+
+
+
+
+
 
 
 
