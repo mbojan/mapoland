@@ -42,7 +42,6 @@ options(SweaveHooks = list(fig=function() par(mgp=c(3, 1, 0), mar=c(4, 4, 2, 2))
 
 <<packages,results=hide,echo=FALSE>>=
 library(mapoland)
-library(bojan)
 @
 
 
@@ -111,20 +110,6 @@ print(voivPlot(p, main="Perimeter"))
 
 
 
-
-\section{Using \code{plot} methods of package \pkg{sp}}
-
-It is possible to use plotting methods from package \pkg{sp} manually.
-
-
-<<fig=TRUE>>=
-s <- getShape("voiv")
-k <- coordinates(s)
-# colors
-library(bojan)
-kol <- gray(rescale(a, .2, .9))
-plot(s, col=kol)
-@
 
 
 
