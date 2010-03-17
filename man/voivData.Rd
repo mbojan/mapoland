@@ -21,4 +21,16 @@ Official statistics: \url{http://www.stat.gov.pl}
 
 TERYT database: \url{http://www.stat.gov.pl/broker/access/index.jspa}
 }
+\examples{
+# areas of voivodships
+a <- structure( voivData$area, names=rownames(voivData))
+s <- getShape("voiv")
+k <- coordinates(s)
+# colors
+x <- a - min(a)
+kol <- x / max(x)
+plot(s, col=gray(kol))
+text( coordinates(s), labels=voivNames(), col=gray((1-kol)>.5),
+    cex=.8)
+}
 \keyword{datasets}
