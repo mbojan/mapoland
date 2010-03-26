@@ -15,8 +15,7 @@
 \author{Micha\l\ Bojanowski\\
 \email{michal2992@gmail.com}}
 
-\date{\svnyear--\svnmonth--\svnday\\
-Very drafty draft}
+\date{Very drafty draft}
 
 
 \newcommand{\pkg}[1]{\textsf{#1}}
@@ -46,6 +45,14 @@ library(mapoland)
 \end{abstract}
 
 \tableofcontents
+
+\vfill
+
+\begin{verbatim}
+$LastChangedDate$
+$LastChangedRevision$
+$LastChangedBy$
+\end{verbatim}
 
 \newpage
 
@@ -121,15 +128,6 @@ print(voivPlot(p, main="Perimeter"))
 \end{list}
 
 
-
-\vfill
-
-
-\begin{verbatim}
-$LastChangedDate$
-$LastChangedRevision$
-$LastChangedBy$
-\end{verbatim}
 
 
 
