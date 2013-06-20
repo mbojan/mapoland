@@ -68,7 +68,7 @@
 #'
 #' @author Michal Bojanowski and Tomasz W. Jerzynski
 #'
-#' Maintainer: Michal Bojanowski \email{m.bojanowski@uw.edu.pl}
+#' Maintainer: Michal Bojanowski \email{m.bojanowski@@uw.edu.pl}
 #'
 #' @seealso \pkg{mapoland} on WWW: \url{http://mapoland.r-forge.r-project.org}
 #'

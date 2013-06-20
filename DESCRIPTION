@@ -21,3 +21,4 @@ Collate:
     'smartCpBind.R'
     'voivNames.R'
     'voivPlot.R'
+    'voivData.R'

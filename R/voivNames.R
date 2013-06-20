@@ -1,33 +1,32 @@
-# get voiv names from shape file and convert to encoding
-
-
-#'Get names of Polish voivodships
+#' Get names of Polish voivodships
+#' 
+#' Get names of Polish voivodships from the shapefile in current encoding.
+#' 
+#' If \code{enc} is \code{NULL} the returned names do not have any polish
+#' diacritics which was a ad-hoc solution to character encoding conversion
+#' problems. If \code{enc} is a character, then its value is passed to \code{to}
+#' argument of \code{\link{iconv}}.
+#' 
+#' The names are read from the attribute in the shape file \code{voiv.shp}.
+#' Consequently, they are in the same order as the polygons there.
+#' 
+#' @param enc character or NULL, name of the encoding to which convert the names
+#' of voivodships, see \code{\link{iconv}} for possibilities
 #'
-#'Get names of Polish voivodships from the shapefile in current encoding.
+#' @return Character vector with voivodship names in the encoding specified by
+#' \code{enc}. The names of the result are TERYT codes of the polygons.
 #'
-#'If \code{enc} is \code{NULL} the returned names do not have any polish
-#'diacritics which was a ad-hoc solution to character encoding conversion
-#'problems. If \code{enc} is a character, then its value is passed to \code{to}
-#'argument of \code{\link{iconv}}.
+#' @seealso \link{shapes} for more information on included shape files. \code{\link{iconv}}
 #'
-#'The names are read from the attribute in the shape file \code{voiv.shp}.
-#'Consequently, they are in the same order as the polygons there.
+#' @export
 #'
-#'@param enc character or NULL, name of the encoding to which convert the names
-#'of voivodships, see \code{\link{iconv}} for possibilities
-#'@return Character vector with voivodship names in the encoding specified by
-#'\code{enc}. The names of the result are TERYT codes of the polygons.
-#'@seealso \link{shapes} for more information on included shape files.
-#'
-#'\code{\link{iconv}}
-#'@examples
-#'
-#'# in current encoding
-#'voivNames()
-#'
-#'# pure ASCII
-#'voivNames(NULL)
-#'
+#' @examples
+#' # in current encoding
+#' voivNames()
+#' 
+#' # pure ASCII
+#' voivNames(NULL)
+#' 
 voivNames <- function(enc="")
 {
     s <- getShape("voiv")

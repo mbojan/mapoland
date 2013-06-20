@@ -1,14 +1,19 @@
-#'Wrapper for reading shape files
+#' Wrapper for reading shape files
+#' 
+#' This is a simple wrapper around \code{\link{readShapePoly}} for importing
+#' shape files contained within package \pkg{mapoland}.
+#' 
+#' 
+#' @param nam character, base name of the shape file to be read
+#' @param ... other arguments passed to \code{\link{readShapePoly}}
 #'
-#'This is a simple wrapper around \code{\link{readShapePoly}} for importing
-#'shape files contained within package \pkg{mapoland}.
+#' @return Object of class "\linkS4class{SpatialPolygonsDataFrame}".
 #'
+#' @seealso \code{\link{readShapePoly}}, \link{shapes}
 #'
-#'@param nam character, base name of the shape file to be read
-#'@param ... other arguments passed to \code{\link{readShapePoly}}
-#'@return Object of class "\linkS4class{SpatialPolygonsDataFrame}".
-#'@seealso \code{\link{readShapePoly}}, \link{shapes}
-#'@examples
+#' @export
+#'
+#' @examples
 #'
 #'s <- getShape("voiv")
 #'plot(s)
