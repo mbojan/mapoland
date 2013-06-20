@@ -1,24 +1,29 @@
 \name{getShape}
 \alias{getShape}
 \title{Wrapper for reading shape files}
-\description{
-This is a simple wrapper around \code{\link{readShapePoly}}
-for importing shape files contained within package \pkg{mapoland}.
-}
 \usage{
-getShape(nam = c("voiv", "polska"), ...)
+  getShape(nam = c("voiv", "polska"), ...)
 }
 \arguments{
-  \item{nam}{character, base name of the shape file to be read}
-  \item{...}{other arguments passed to \code{\link{readShapePoly}}}
+  \item{nam}{character, base name of the shape file to be
+  read}
+
+  \item{...}{other arguments passed to
+  \code{\link{readShapePoly}}}
 }
 \value{
-Object of class "\linkS4class{SpatialPolygonsDataFrame}".
+  Object of class "\linkS4class{SpatialPolygonsDataFrame}".
 }
-\seealso{
-\code{\link{readShapePoly}}, \link{shapes}
+\description{
+  This is a simple wrapper around
+  \code{\link{readShapePoly}} for importing shape files
+  contained within package \pkg{mapoland}.
 }
 \examples{
 s <- getShape("voiv")
 plot(s)
 }
+\seealso{
+  \code{\link{readShapePoly}}, \link{shapes}
+}
+

@@ -1,25 +1,22 @@
+\docType{data}
 \name{voivData}
 \alias{voivData}
-\docType{data}
 \title{Data on Polish voivodships}
-\description{
-Some extra data on Polish voivodships.
-}
-\usage{data(voivData)}
-\format{
-  A data frame with 16 observations on the following 4 variables.
-  \describe{
-    \item{\code{teryt}}{numeric, area code from "TERYT": official Polish area
-    classification}
-    \item{\code{area}}{numeric, area in square kilometers}
-    \item{\code{perimeter}}{numeric, voivodship perimeter in kilometers}
-    \item{\code{pop2001}}{numeric, voivodship population in 2001}
-  }
-}
+\format{A data frame with 16 observations on the following 4 variables.
+\describe{
+\item{list("teryt")}{numeric, area code from "TERYT": official Polish area
+classification}
+\item{list("area")}{numeric, area in square kilometers}
+\item{list("perimeter")}{numeric, voivodship perimeter in #' kilometers}
+\item{list("pop2001")}{numeric, voivodship population in 2001}
+}}
 \source{
-Official statistics: \url{http://www.stat.gov.pl}
-
-TERYT database: \url{http://www.stat.gov.pl/broker/access/index.jspa}
+  Official statistics: \url{http://www.stat.gov.pl} TERYT
+  database:
+  \url{http://www.stat.gov.pl/broker/access/index.jspa}
+}
+\description{
+  Some extra data on Polish voivodships.
 }
 \examples{
 # areas of voivodships
@@ -34,3 +31,4 @@ text( coordinates(s), labels=voivNames(), col=gray((1-kol)>.5),
     cex=.8)
 }
 \keyword{datasets}
+
