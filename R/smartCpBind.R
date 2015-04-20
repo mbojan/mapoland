@@ -39,5 +39,5 @@ smartSpCbind <- function(sp, x, matchattr=NULL)
     }
     names(x) <- rownames(sp@data)
     dat <- data.frame("x"=x)
-    spCbind(sp, dat)
+    maptools::spCbind(sp, dat)
 }

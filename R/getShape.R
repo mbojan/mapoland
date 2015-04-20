@@ -9,7 +9,7 @@
 #'
 #' @return Object of class "\linkS4class{SpatialPolygonsDataFrame}".
 #'
-#' @seealso \code{\link{readShapePoly}}, \link{shapes}
+#' @seealso \code{\link{readShapePoly}}, \link{mapoland}
 #'
 #' @export
 #'
@@ -22,5 +22,5 @@ getShape <- function(nam=c("voiv", "polska"), ...)
 {
     n <- match.arg(nam)
     fname <- system.file("shapes", paste(n, ".shp", sep=""), package="mapoland")
-    readShapePoly(fname, ...)
+    maptools::readShapePoly(fname, ...)
 }

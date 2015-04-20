@@ -16,7 +16,7 @@
 #' 
 #' The underlying shapefile has the following polygon attributes that can be
 #' used for matching: "teryt", "names_asci", "names_utf8", "names_lati".  See
-#' \link{shapes} for further details.
+#' \code{\link{mapoland}} for further details.
 #' 
 #' The plot is produced using \code{\link[sp]{spplot}}.
 #'
@@ -28,7 +28,7 @@
 #' @return Object of class "trellis" returned invisibly containing the plotting
 #' structure. The plot is produced.
 #'
-#' @seealso \link{shapes} for the documentation of available shapes in package
+#' @seealso \code{\link{mapoland}} for the documentation of available shapes in package
 #' \pkg{mapoland}.  \code{\link[sp]{spplot}}, \code{\link{spCbind}}
 #'
 #' @export
@@ -39,5 +39,5 @@ voivPlot <- function(x, ..., matchattr=NULL)
     # merge 'x'
     o <- smartSpCbind(sp=pl, x=x, matchattr=matchattr)
     # plot
-    spplot(o, "x", ...)
+    sp::spplot(o, "x", ...)
 }

@@ -9,11 +9,11 @@
 #' @format 
 #' A data frame with 16 observations on the following 4 variables.
 #' \describe{ 
-#' \item{list("teryt")}{numeric, area code from "TERYT": official Polish area
+#' \item{teryt}{numeric, area code from "TERYT": official Polish area
 #' classification}
-#' \item{list("area")}{numeric, area in square kilometers}
-#' \item{list("perimeter")}{numeric, voivodship perimeter in #' kilometers}
-#' \item{list("pop2001")}{numeric, voivodship population in 2001}
+#' \item{area}{numeric, area in square kilometers}
+#' \item{perimeter)}{numeric, voivodship perimeter in #' kilometers}
+#' \item{pop2001}{numeric, voivodship population in 2001}
 #' }
 #'
 #' @source

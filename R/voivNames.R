@@ -16,7 +16,7 @@
 #' @return Character vector with voivodship names in the encoding specified by
 #' \code{enc}. The names of the result are TERYT codes of the polygons.
 #'
-#' @seealso \link{shapes} for more information on included shape files. \code{\link{iconv}}
+#' @seealso \code{\link{mapoland-package}} for more information on included shape files. \code{\link{iconv}}
 #'
 #' @export
 #'

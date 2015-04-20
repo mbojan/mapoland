@@ -8,8 +8,8 @@
 #' 
 #' The package currently contains data on voivodships, i.e. top-level
 #' administrative units. Future releases might include data on county and
-#' municipality levels.  See \link{shapes} for information about included shape
-#' files.
+#' municipality levels.  See Section "Spatial data on Poland" below for
+#' information about included shape files.
 #' 
 #' We have invested some time and effort in creating this package. We hope that
 #' it will be useful to you. Please cite it whenever you use it for data
@@ -17,33 +17,32 @@
 #' proper information and format.
 #'
 #'
-#' @section Spatial data on Poland
-#'
+#' @section Spatial data on Poland:
 #' Package \pkg{mapoland} provides some extra data files with spatial
 #' information about Poland. These are in ESRI shape files stored in the
 #' \code{shapes} folder of the package directory.
 #' 
 #' The policy that is implemented in package \pkg{mapoland} is to:
 #' \enumerate{
-#' \item Store polygon data in shape files instead of in R images (\code{rda}
-#' files) of objects of class "\linkS4class[sp]{SpatialPolygonsDataFrame}". The
+#' \item{Store polygon data in shape files instead of in R images (\code{rda}
+#' files) of objects of class \linkS4class{SpatialPolygonsDataFrame}. The
 #' user can easily import them using \code{\link{getShape}} function in this
-#' package.
+#' package.}
 #' 
-#' \item Limit the number of polygon attributes in the shape files to absolute
+#' \item{Limit the number of polygon attributes in the shape files to absolute
 #' minimum necessary for identifying the polygons. Currently the polygons can be
 #' identified with TERYT codes as well as area names in various encodings, see
-#' sections below for details.
+#' sections below for details.}
 #' 
-#' \item All additional polygon attributes are stored in separate data frames,
+#' \item{All additional polygon attributes are stored in separate data frames,
 #' to be loaded with \code{\link{data}}. They can be matched with the polygons
-#' "on the fly" as well as used for other purposes.
+#' "on the fly" as well as used for other purposes.}
 #' }
 #' 
 #' Quick list of available shape files (see sections below for details):
 #' \describe{
-#' \item{list("polska.shp")}{low-quality contour of Poland}
-#' \item{list("voiv.shp")}{low-quality polygons for Polish voivodships}
+#' \item{polska.shp}{low-quality contour of Poland}
+#' \item{voiv.shp}{low-quality polygons for Polish voivodships}
 #' }
 #' 
 #' See section "Accessing the shape files" at the end for how to get your hands

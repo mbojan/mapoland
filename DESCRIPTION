@@ -1,12 +1,12 @@
 Package: mapoland
 Version: 0.2-0
-Date: 2010-03-05
+Date: 2015-04-20
 Title: Maps of Poland for data visualization and graphics
 Author: Michal Bojanowski, Tomasz W. Jerzynski
 Maintainer: Michal Bojanowski <m.bojanowski@uw.edu.pl>
 Depends:
-    R (>= 2.0.0),
-    maptools
+    R (>= 2.0.0)
+Imports: sp, maptools
 Suggests:
     testthat,
     roxygen2
@@ -15,10 +15,3 @@ URL: http://mapoland.r-forge.r-project.org
 License: GPL-3
 LazyLoad: yes
 LazyData: yes
-Collate:
-    'getShape.R'
-    'mapoland-package.R'
-    'smartCpBind.R'
-    'voivNames.R'
-    'voivPlot.R'
-    'voivData.R'
