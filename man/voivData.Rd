@@ -9,7 +9,7 @@
 \item{teryt}{numeric, area code from "TERYT": official Polish area
 classification}
 \item{area}{numeric, area in square kilometers}
-\item{perimeter)}{numeric, voivodship perimeter in #' kilometers}
+\item{perimeter}{numeric, voivodship perimeter in #' kilometers}
 \item{pop2001}{numeric, voivodship population in 2001}
 }}
 \source{
@@ -20,6 +20,7 @@ TERYT database: \url{http://www.stat.gov.pl/broker/access/index.jspa}
 Some extra data on Polish voivodships.
 }
 \examples{
+if( require(sp) ) {
 # areas of voivodships
 a <- structure( voivData$area, names=rownames(voivData))
 s <- getShape("voiv")
@@ -30,6 +31,7 @@ kol <- x / max(x)
 plot(s, col=gray(kol))
 text( coordinates(s), labels=voivNames(), col=gray((1-kol)>.5),
     cex=.8)
+}
 }
 \keyword{datasets}
 

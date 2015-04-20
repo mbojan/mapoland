@@ -15,8 +15,8 @@
 #'
 #' @examples
 #'
-#'s <- getShape("voiv")
-#'plot(s)
+#' s <- getShape("voiv")
+#' # plot(s)
 #'
 getShape <- function(nam=c("voiv", "polska"), ...)
 {

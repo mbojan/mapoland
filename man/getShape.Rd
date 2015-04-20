@@ -20,7 +20,7 @@ shape files contained within package \pkg{mapoland}.
 }
 \examples{
 s <- getShape("voiv")
-plot(s)
+# plot(s)
 }
 \seealso{
 \code{\link{readShapePoly}}, \link{mapoland}

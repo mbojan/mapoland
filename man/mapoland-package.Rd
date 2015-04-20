@@ -69,17 +69,19 @@ coordinates do not have any geographical interpretation and the projection
 is unknown. The shape file does not contain any polygon attributes.
 }
 \examples{
+if( require(sp) ) {
 # Contour of Poland
 plot(getShape("polska"))
 
 # Voivodships with their names
 pl <- getShape("voiv")
 plot(pl)
-text(coordinates(pl), labels=voivNames(), cex=0.8)
+text(sp::coordinates(pl), labels=voivNames(), cex=0.8)
 
 # voivodships colored by area
 x <- structure( voivData$area, names=rownames(voivData) )
 voivPlot(x, main="Area of voivodships [km^2]")
+}
 }
 \author{
 Michal Bojanowski and Tomasz W. Jerzynski
